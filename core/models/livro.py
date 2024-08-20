@@ -19,10 +19,6 @@ class Livro(models.Model):
 
     autores = models.ManyToManyField(Autor, related_name="livros", blank=True)
 
-    def __str__(self):
-        return f"({self.id}) {self.titulo} ({self.quantidade})"
-    
-class Livro(models.Model):
     capa = models.ForeignKey(
         Image,
         related_name="+",
@@ -31,3 +27,6 @@ class Livro(models.Model):
         blank=True,
         default=None,
     )
+    def __str__(self):
+        return f"({self.id}) {self.titulo} ({self.quantidade})"
+    

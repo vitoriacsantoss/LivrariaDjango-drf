@@ -16,6 +16,9 @@ class LivroSerializer(ModelSerializer):
         required=False,
         read_only=True
     )
+    class Meta:
+        model = Livro
+        fields = "__all__"
 
 
 class LivroDetailSerializer(ModelSerializer):
