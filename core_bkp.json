@@ -1,6 +1,6 @@
 MODE: DEVELOPMENT 
-MEDIA_URL: http://191.52.55.77:19003/media/ 
-DATABASE: {'default': {'ENGINE': 'django.db.backends.sqlite3', 'NAME': PosixPath('/home/vitoria.camile/Documentos/LivrariaDjango-drf/db.sqlite3')}}
+MEDIA_URL: http://191.52.55.237:19003/media/ 
+DATABASE: {'default': {'ENGINE': 'django.db.backends.sqlite3', 'NAME': PosixPath('/home/vitoria.camile/Área de Trabalho/LivrariaDjango-drf/db.sqlite3')}}
 [
 {
   "model": "admin.logentry",
@@ -1027,7 +1027,6 @@ DATABASE: {'default': {'ENGINE': 'django.db.backends.sqlite3', 'NAME': PosixPath
     "password": "pbkdf2_sha256$720000$L8aMHb58ceN8dEhjeMaELj$tFjhUsKjuW3YzmHtxfdWr/2yroKoyeVBQZGTWZW8xcY=",
     "last_login": "2024-08-23T17:39:24.753Z",
     "is_superuser": true,
-    "passage_id": "",
     "email": "santosviih360@gmail.com",
     "name": "",
     "is_active": true,

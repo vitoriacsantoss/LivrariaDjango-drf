@@ -8,7 +8,7 @@ from .autor import Autor
 
 
 class Livro(models.Model):
-    titulo = models.CharField(max_length=255)
+    titulo = models.CharField(max_length=255, blank=True, null=True)
     isbn = models.CharField(max_length=32, blank=True, null=True)
     quantidade = models.IntegerField(default=0, blank=True, null=True)
     preco = models.DecimalField(max_digits=7, decimal_places=2, default=0, blank=True, null=True)
