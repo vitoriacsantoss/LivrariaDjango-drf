@@ -141,12 +141,13 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 AUTH_USER_MODEL = "core.User"
 
-
-
 REST_FRAMEWORK = {
-    "DEFAULT_PERMISSION_CLASSES": [
+    
+    "DEFAULT_AUTHENTICATION_CLASSES": ("core.authentication.TokenAuthentication",), # Autenticação no passage.id
+    "DEFAULT_PERMISSION_CLASSES": ("rest_framework.permissions.IsAuthenticated"), # Permissão total para usuários autenticados
+     "DEFAULT_PERMISSION_CLASSES": 
         "rest_framework.permissions.IsAuthenticated",
-    ]
+
 }
 
 # REST_FRAMEWORK = {
