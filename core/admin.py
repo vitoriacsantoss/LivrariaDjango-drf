@@ -50,6 +50,11 @@ class UserAdmin(BaseUserAdmin):
         ),
     )
 
+class UserAdmin(UserAdmin):
+    
+        (_("Personal Info"), {"fields": ("name","foto")}), # inclua a foto aqui
+
+
 
 @admin.register(User)
 class UserAdmin(UserAdmin):
