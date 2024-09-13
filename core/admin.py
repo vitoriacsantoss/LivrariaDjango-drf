@@ -89,5 +89,21 @@ class LivroAdmin(admin.ModelAdmin):
 
 
 
+class ItensCompraInline(admin.TabularInline):
+    model = ItensCompra
+    extra = 1 # Quantidade de itens adicionais
+
+
+@admin.register(Compra)
+class CompraAdmin(admin.ModelAdmin):
+    list_display = ("usuario", "status")
+    search_fields = ("usuario", "status")
+    list_filter = ("usuario", "status")
+    ordering = ("usuario", "status")
+    list_per_page = 25
+    inlines = [ItensCompraInline]
+
+
+
 # @admin.site.register(Compra)
 # @admin.site.register(ItensCompra)
