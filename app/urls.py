@@ -11,15 +11,15 @@ from drf_spectacular.views import (
 
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 
+
 from core.views import (
     AutorViewSet,
     CategoriaViewSet,
+    CompraViewSet, # inclua essa linha
     EditoraViewSet,
     LivroViewSet,
     UserViewSet,
 )
-
-    # CompraViewSet
 
 
 from uploader.router import router as uploader_router
@@ -32,7 +32,10 @@ router.register(r"users", UserViewSet, basename="users")
 router.register(r"editoras", EditoraViewSet, basename="editoras")
 router.register(r"autores", AutorViewSet, basename="autores")
 router.register(r"livros", LivroViewSet, basename="livros")
-# router.register(r"compras", CompraViewSet, basename="compras")
+router.register(r"compras", CompraViewSet)
+
+
+
 
 
 
