@@ -1,17 +1,14 @@
 from django.db import models
 
 from .user import User
-from .livro import Livro
 
-class ItensCompraInline(admin.TabularInline):
-    model = ItensCompra
-    extra = 1 # Quantidade de itens adicionais
+class Compra(models.Model):
+    class StatusCompra(models.IntegerChoices):
+        CARRINHO = 1, "Carrinho"
+        REALIZADO = 2, "Realizado"
+        PAGO = 3, "Pago"
+        ENTREGUE = 4, "Entregue"
 
-@admin.register(Compra)
-class CompraAdmin(admin.ModelAdmin):
-    list_display = ("usuario", "status")
-    search_fields = ("usuario", "status")
-    list_filter = ("usuario", "status")
-    ordering = ("usuario", "status")
-    list_per_page = 25
-    inlines = [ItensCompraInline]
+    usuario = models.ForeignKey(User, on_delete=models.PROTECT, related_name="compras")
+    status = models.IntegerField(choices=StatusCompra.choices,  default=StatusCompra.CARRINHO)
+
