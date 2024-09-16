@@ -3,9 +3,14 @@ from core.models import Compra, ItensCompra
 
 
 class ItensCompraSerializer(ModelSerializer):
+    total = SerializerMethodField()
+
+    def get_total(self, instance):
+        return instance.livro.preco * instance.quantidade
+
     class Meta:
         model = ItensCompra
-        fields = ("livro", "quantidade")    
+        fields = ("livro", "quantidade", "total")
         depth = 1
 
 
